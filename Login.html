@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incia sesion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Logo_colegiojireh.png">
+</head>
+<body>
+    <!-- Contenido del inicio de sesión -->
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form action="" method="post" name="f1">
+
+                <h1>
+                    Crea tu cuenta
+                </h1>
+                <span>
+                    Usa tu correo para registrarte
+                </span>
+                <!-- Crearemos los campos para infomracion personal -->
+                
+                <fieldset class="nombreapellido">
+                    <label for="1nombre" name="1nombre" id="1nombre">Ingresa tu primer nombre</label>
+                    <input type="2nombre" name="1nombre" id="1nombre" placeholder="Pedro" required>
+
+                    <label for="2nombre" name="2nombre" id="2nombre">Ingresa tu segundo nombre</label>
+                    <input type="text" name="2nombre" id="2nombre" placeholder="Pablo">
+
+                    <label for="1apellido">Ingresa tu primer apellido</label>
+                    <input type="1apellido" name="1apellido" id="1apellido" placeholder="Ordoñez" required>
+                    <label for="2apellido" name="2apellido" id="2apellido">Ingresa tu segundo apellido</label>
+                    <input type="text" name="2apellido" id="2apellido" placeholder="Valdez">
+
+                    <label for="edad">Ingresa tu fecha de nacimiento</label>
+                    <input type="date" name="date" id="date" required>
+                </fieldset>
+
+                <!-- Campo para datos importantes para el registro (obligatorios) -->
+                <fieldset class="Datosregistro">
+                    <label for="cui" name="cui" id="cui">Ingresa tu cui</label>
+                    <input type="text" name="cui" id="cui" pattern="[0-9]{13}" placeholder="13 dígitos sin espacios" required>
+                    <label for="Foto" name="foto" id="foto">Selecciona una foto para tu perfil</label>
+                    <input type="file" name="imagenperfil" id="imagenperfil" accept="image/png, image/img" required>
+                    <img src="#" id="preview-image" alt="preview">
+
+                    <br>
+                    <label for="numtel" id="numtel" name="numtel">Ingresa tu numero de telefono</label>
+                    <input type="text" name="numtel" id="numtel" required pattern="[0-9]{8}" placeholder="55441258">
+                </fieldset>
+
+                <!-- Campo obligatorio que obtiene los datos para iniciar sesion -->
+
+                <fieldset class="infosesion">
+                    <label for="tipocuenta" id="tipocuenta">
+                        Selecciona el tipo de cuenta que deseas crear
+                    </label>
+
+                    <select name="tipocuenta" id="tipocuenta" required>
+                        <option value="">---selecciona el tipo de cuenta---</option>
+                        <option value="Docente">Docente</option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Estudiante">Estudiante</option>
+                    </select>
+
+                    <label for="email" name="email" id="email" >Ingresa tu email</label>
+                    <input type="email" name="email" id="email" required>
+
+                    <fieldset class="password">
+                        <label for="clave1">Ingresa tu contraseña</label>
+                        <input type="password" id="clave1" class="clave1" placeholder="********" required>
+                        <button type="button" class="btnPassword" onclick="mostrarContrasena('clave1')">Mostrar</button>
+                    </fieldset>
+                
+                    <fieldset class="password">
+                        <label for="clave2">Confirma tu contraseña</label>
+                        <input type="password" id="clave2" class="clave2" placeholder="********" required>
+                        <button type="button" class="btnPassword" onclick="mostrarContrasena('clave2')">Mostrar</button>
+                    </fieldset>
+                </fieldset>
+                <button class="hidden" value="REGISTRAR" onclick="comprobarClave()">REGISTRAR</button>
+            </form>
+        </div>
+
+        <!-- Panel de inicio de sesion -->
+        <div class="form-container sign-in">
+            <form>
+                <h1>INICIA SESION</h1>
+                <label for="Usuario">Ingresa tu correo electronico</label>
+                <input type="text" name="usuario" placeholder="Usuario" required>
+
+                <label for="password">Ingresa tu contraseña</label>
+                <input type="password" id="loginPass" class="clave1" placeholder="********" required>
+                <button type="button" class="btnPassword" onclick="mostrarContrasena('loginPass')">Mostrar</button>
+
+
+                <button type="submit" class="reglog">Ingresar</button>
+                <a href="#">¿Olvidaste tu contraseña?</a>
+            </form>
+            
+        </div>
+
+        <!-- Panel desplazable -->
+        <div class="toggle-container">
+            <div class="toggle">
+                <!-- Boton regreso a inicio de sesion -->
+                <div class="toggle-panel toggle-left">
+                    <h1>BIENVENIDO DE REGRESO!</h1>
+                    <p>Ingresa a tu cuenta persona</p>
+                    <button class="hidden" id="login">
+                        Logeate
+                    </button>
+                </div>
+
+                <!-- Boton regreso a registro de sesion -->
+                <div class="toggle-panel toggle-right">
+                    <h1>REGISTRATE AHORA!</h1>
+                    <p>Registrate para acceder</p>
+                    <button class="hidden" id="register">Registrate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
