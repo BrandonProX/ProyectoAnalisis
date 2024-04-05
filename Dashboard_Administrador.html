@@ -44,6 +44,7 @@
         }
 
         section {
+            display: none;
             align-items: center;
             justify-content: center;
             background-color: white;
@@ -412,5 +413,29 @@ h1{
     <footer>
         <p>&copy; 2024 Sistema de Gestión Escolar. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarItems = document.querySelectorAll('.sidebar nav ul li a');
+    
+            sidebarItems.forEach(function(item) {
+                item.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+    
+                    if (targetSection) {
+                        const sections = document.querySelectorAll('section');
+                        sections.forEach(function(section) {
+                            section.style.display = 'none';
+                        });
+                        targetSection.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+    
+
 </body>
 </html>
