@@ -7,8 +7,11 @@
 
     <!-- Estilo para el contenido de la pagina -->
     <style>
+        /* Limpia el formato de la pagina y aplicamos fuente */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
             body {
-            font-family: Arial, sans-serif;
+            font-family: "Montserrat", sans-serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(to right, #112440, #c99b9b);
@@ -78,7 +81,6 @@
         }
 
 header {
-    align-items: center;
     justify-content: center;
     display: flex;
     background-color: #333;
@@ -194,7 +196,7 @@ h1{
                     <li><a href="#dashboard">Gestión de maestros</a></li>
                     <li><a href="#users">Gestión de Alumnos</a></li>
                     <li><a href="#courses">Gestión de Cursos</a></li>
-                    <li><a href="#grades">Gestión de Calificaciones</a></li>
+                    <li><a href="#ratings">Gestión de Calificaciones</a></li>
                     <li><a href="#resources">Gestión de Recursos</a></li>
                     <li><a href="#reports">Informes y Análisis</a></li>
                 </ul>
@@ -209,8 +211,18 @@ h1{
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required><br>
 
-            <label for="asignatura">Asignatura:</label>
-            <input type="text" id="asignatura" name="asignatura" required><br>
+            <label for="asignatura">Asignatura</label>
+            <select name="asignatura" required>
+                <option value="matematicas">Matemáticas</option>
+                <option value="comunicacion y lenguaje">Comunicación y Lenguaje</option>
+                <option value="ingles">Inglés</option>
+                <option value="computacion">Computación</option>
+                <option value="medio natural">Medio Natural</option>
+                <option value="medio social">Medio Social</option>
+                <option value="etica">Ética</option>
+                <option value="educacion fisica">Educación Física</option>
+                <option value="artes plasticas">Artes Plásticas</option>
+              </select>
 
             <label for="grado">Grado:</label>
             <select id="grado" name="grado">
@@ -302,10 +314,8 @@ h1{
 
             <section id="courses">
                 <h2>Gestión de Cursos</h2>
-
                 <!-- Formulario para agregar/editar cursos aquí -->
-
-                <div style="display: flex; flex-wrap: wrap;">
+                <div >
                     <!-- Lista de maestros aquí -->
                     <div style="margin-right: 20px; flex: 1; min-width: 200px;">
                       <label for="maestros">Maestros</label><br>
@@ -336,15 +346,39 @@ h1{
                       </form>
                     </div>
                   </div>
-                </section>
+            </section>
 
-            <section id="grades">
+            <section id="ratings">
                 <h2>Gestión de Calificaciones</h2>
                 <!-- Formulario para agregar/editar calificaciones aquí -->
                 <!-- Lista de calificaciones aquí -->
-                <h1>Curso: Matematicas | Grado: 3ro Primaria</h1>
+                <div style="display: flex; flex-wrap: wrap;">
+                    <!-- Lista de maestros aquí -->
+                    <div style="margin-right: 20px; flex: 1; min-width: 200px;">
+                      <select name="maestros" required style="width: 100%; text-align: center;">
+                        <option value="matematicas">Matemáticas</option>
+                        <option value="comunicacion y lenguaje">Comunicación y Lenguaje</option>
+                        <option value="ingles">Inglés</option>
+                        <option value="computacion">Computación</option>
+                        <option value="medio natural">Medio Natural</option>
+                        <option value="medio social">Medio Social</option>
+                        <option value="etica">Ética</option>
+                        <option value="educacion fisica">Educación Física</option>
+                        <option value="artes plasticas">Artes Plásticas</option>
+                      </select>
+                    </div>
+
+                        <!-- Lista de maestros aquí -->
+                    <div style="margin-right: 20px; flex: 1; min-width: 200px;">
+                      <select name="maestros" required style="width: 100%; text-align: center;">
+                        <option value="Primaria">Primaria</option>
+                        <option value="Secundaria">Secundaria</option>
+                        <option value="Preparatoria">Preparatoria</option>
+                      </select>
+                    </div>
+                </div>
                 <div class="tabla">
-                    <table id="tablaNotas">
+                    <table id="tablaNotas" style="width: 100%; text-align: center;">
                         <thead>
                         <!-- Aquí se generarán las columnas de calificaciones -->
                         <tr>
@@ -357,7 +391,6 @@ h1{
                         <tbody>
                         </tbody>
                     </table>
-                </div>
             </section>
 
             <section id="resources">
