@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard_maestro</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: "Monserrath", sans-serif;
+            background: linear-gradient(to right, #112440, #c99b9b);
+        }
+
+        .container{
+            padding: 2%;
+        }
+
+        .box{
+            border: 1px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding: 16px;
+        }
+
+        .card{
+            box-shadow: 0 4px 8px 0 rgb(255, 255, 255),
+                        0 6px 20px 0 rgba(255, 255, 255, 0.19);
+            width: 250px;
+            height: 320px;
+            border-radius: 16px;
+            position: relative;
+            color: white;
+            
+        }
+
+        .card:hover{
+            scale: 1.05;
+        }
+
+        img{
+            width: 250px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px 16px 0 0;
+
+        }
+
+        .content{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .title{
+            font-size: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .description, .horario{
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+            <h1>Colegio Jireh</h1>
+            <div class="navbar">
+                <nav>
+                    <ul>
+                        <li><a href="#dashboard">Inicio</a></li>
+                        <li><a href="#">Visítanos en Facebook</a></li>
+                        <li><a href="#">Cerrar sesión</a></li>
+                    </ul>
+                </nav>
+            </div>
+    </header>
+
+    <div class="container">
+        <div class="box">
+            <div class="card">
+                <img src="computacion.png" alt="Imagendelcurso"></img>
+                    <div class="content">
+                        <div class="title">Computacion</div>
+                        <div class="description">Clase de computacion 6to primaria</div>
+                        <div class="horario">11:30 a 12:30</div>
+                    </div>
+            </div>
+    
+            <div class="card">
+                <img src="computacion.png" alt="Imagendelcurso"></img>
+                    <div class="content">
+                        <div class="title">Computacion</div>
+                        <div class="description">Clase de computacion 6to primaria</div>
+                        <div class="horario">11:30 a 12:30</div>
+                    </div></div>
+    
+            <div class="card">
+                <img src="computacion.png" alt="Imagendelcurso"></img>
+                    <div class="content">
+                        <div class="title">Computacion</div>
+                        <div class="description">Clase de computacion 6to primaria</div>
+                        <div class="horario">11:30 a 12:30</div>
+                    </div></div>
+    
+            <div class="card">
+                <img src="computacion.png" alt="Imagendelcurso"></img>
+                    <div class="content">
+                        <div class="title">Computacion</div>
+                        <div class="description">Clase de computacion 6to primaria</div>
+                        <div class="horario">11:30 a 12:30</div>
+            </div></div>
+    
+            <div class="card">
+                <img src="computacion.png" alt="Imagendelcurso"></img>
+                    <div class="content">
+                        <div class="title">Computacion</div>
+                        <div class="description">Clase de computacion 6to primaria</div>
+                        <div class="horario">11:30 a 12:30</div>
+            </div></div>
+
+            <div class="card">
+                <img src="computacion.png" alt="Imagendelcurso"></img>
+                    <div class="content">
+                        <div class="title">Computacion</div>
+                        <div class="description">Clase de computacion 6to primaria</div>
+                        <div class="horario">11:30 a 12:30</div>
+            </div></div>
+            
+    </div>
+</body>
+</html>
