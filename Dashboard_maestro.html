@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard_maestro</title>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-        *{
+        body{
             padding: 0;
             margin: 0;
             font-family: "Monserrath", sans-serif;
@@ -15,7 +16,7 @@
         }
 
         .container{
-            padding: 2%;
+            padding: 1%;
         }
 
         .box{
@@ -31,12 +32,11 @@
         .card{
             box-shadow: 0 4px 8px 0 rgb(255, 255, 255),
                         0 6px 20px 0 rgba(255, 255, 255, 0.19);
-            width: 250px;
-            height: 320px;
+            width: 375px;
+            height: 425;
             border-radius: 16px;
             position: relative;
-            color: white;
-            
+            background-color: #fff;
         }
 
         .card:hover{
@@ -44,7 +44,8 @@
         }
 
         img{
-            width: 250px;
+            justify-content: center;
+            width: 375px;
             height: 200px;
             object-fit: cover;
             border-radius: 16px 16px 0 0;
@@ -68,21 +69,62 @@
             text-align: center;
             font-size: 12px;
         }
+
+header {
+    justify-content: center;
+    display: flex;
+    background-color: #333;
+    color: white;
+    padding: 10px 50px;
+}
+
+.titleh{
+    display: block;
+    gap: 1px;
+}
+
+
+.navbar{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+
+.navbar nav ul li {
+    display: inline;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px; /* Ajustar el espacio alrededor de los enlaces según sea necesario */
+}
+
+.navbar nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Cambiar el color de fondo al pasar el cursor */
+    border-radius: 5px; /* Añadir bordes redondeados */
+}
+
+
     </style>
 </head>
 <body>
 
     <header>
+        <div class="titleh">
             <h1>Colegio Jireh</h1>
-            <div class="navbar">
-                <nav>
-                    <ul>
-                        <li><a href="#dashboard">Inicio</a></li>
-                        <li><a href="#">Visítanos en Facebook</a></li>
-                        <li><a href="#">Cerrar sesión</a></li>
-                    </ul>
-                </nav>
-            </div>
+        <h2>Maestro</h2>
+        </div>
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#dashboard">Inicio</a></li>
+                    <li><a href="#">Visítanos en Facebook</a></li>
+                    <li><a href="#">Cerrar sesión</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <div class="container">
