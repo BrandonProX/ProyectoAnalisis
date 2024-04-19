@@ -1,7 +1,7 @@
 
 
 // Configurar la URL de la API
-const apiUrl = 'http://3.144.48.177:3000/login';
+const apiUrl = 'http://127.0.0.1:3000/login';
 
 const btnLogin = document.getElementById('btnIngresar');
 
