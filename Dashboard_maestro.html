@@ -4,110 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard_maestro</title>
-    
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-        body{
-            padding: 0;
-            margin: 0;
-            font-family: "Monserrath", sans-serif;
-            background: linear-gradient(to right, #112440, #c99b9b);
-        }
-
-        .container{
-            padding: 1%;
-        }
-
-        .box{
-            border: 1px solid white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 16px;
-            padding: 16px;
-        }
-
-        .card{
-            box-shadow: 0 4px 8px 0 rgb(255, 255, 255),
-                        0 6px 20px 0 rgba(255, 255, 255, 0.19);
-            width: 375px;
-            height: 425;
-            border-radius: 16px;
-            position: relative;
-            background-color: #fff;
-        }
-
-        .card:hover{
-            scale: 1.05;
-        }
-
-        img{
-            justify-content: center;
-            width: 375px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 16px 16px 0 0;
-
-        }
-
-        .content{
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .title{
-            font-size: 20px;
-            text-align: center;
-            font-weight: 700;
-        }
-        
-        .description, .horario{
-            text-align: center;
-            font-size: 12px;
-        }
-
-header {
-    justify-content: center;
-    display: flex;
-    background-color: #333;
-    color: white;
-    padding: 10px 50px;
-}
-
-.titleh{
-    display: block;
-    gap: 1px;
-}
-
-
-.navbar{
-    display: flex;
-    justify-content: right;
-    align-items: center;
-}
-
-
-.navbar nav ul li {
-    display: inline;
-}
-
-.navbar nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px; /* Ajustar el espacio alrededor de los enlaces según sea necesario */
-}
-
-.navbar nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Cambiar el color de fondo al pasar el cursor */
-    border-radius: 5px; /* Añadir bordes redondeados */
-}
-
-
-    </style>
+    <link rel="stylesheet" href="src/css/stylemaestro.css">
 </head>
 <body>
 
@@ -119,7 +16,7 @@ header {
         <div class="navbar">
             <nav>
                 <ul>
-                    <li><a href="#dashboard">Inicio</a></li>
+                <li><a href="#dashboard">Inicio</a></li>
                     <li><a href="#">Visítanos en Facebook</a></li>
                     <li><a href="#">Cerrar sesión</a></li>
                 </ul>
@@ -127,57 +24,18 @@ header {
         </div>
     </header>
 
-    <div class="container">
+    <div class="containera">
         <div class="box">
             <div class="card">
-                <img src="computacion.png" alt="Imagendelcurso"></img>
+                <a href="Dashboard_Maestro_vista.html">
+                    <img src="src/css/Imagenes/computacion.png" alt="Imagendelcurso"></img>
                     <div class="content">
                         <div class="title">Computacion</div>
                         <div class="description">Clase de computacion 6to primaria</div>
                         <div class="horario">11:30 a 12:30</div>
-                    </div>
+                </a>
             </div>
-    
-            <div class="card">
-                <img src="computacion.png" alt="Imagendelcurso"></img>
-                    <div class="content">
-                        <div class="title">Computacion</div>
-                        <div class="description">Clase de computacion 6to primaria</div>
-                        <div class="horario">11:30 a 12:30</div>
-                    </div></div>
-    
-            <div class="card">
-                <img src="computacion.png" alt="Imagendelcurso"></img>
-                    <div class="content">
-                        <div class="title">Computacion</div>
-                        <div class="description">Clase de computacion 6to primaria</div>
-                        <div class="horario">11:30 a 12:30</div>
-                    </div></div>
-    
-            <div class="card">
-                <img src="computacion.png" alt="Imagendelcurso"></img>
-                    <div class="content">
-                        <div class="title">Computacion</div>
-                        <div class="description">Clase de computacion 6to primaria</div>
-                        <div class="horario">11:30 a 12:30</div>
-            </div></div>
-    
-            <div class="card">
-                <img src="computacion.png" alt="Imagendelcurso"></img>
-                    <div class="content">
-                        <div class="title">Computacion</div>
-                        <div class="description">Clase de computacion 6to primaria</div>
-                        <div class="horario">11:30 a 12:30</div>
-            </div></div>
-
-            <div class="card">
-                <img src="computacion.png" alt="Imagendelcurso"></img>
-                    <div class="content">
-                        <div class="title">Computacion</div>
-                        <div class="description">Clase de computacion 6to primaria</div>
-                        <div class="horario">11:30 a 12:30</div>
-            </div></div>
-            
+        </div>    
     </div>
 </body>
 </html>

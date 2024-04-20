@@ -66,6 +66,7 @@ h1{
     text-transform: uppercase;
     margin-top: 10px;
     cursor: pointer;
+    margin: 10px;
 }
 
 .container button:hover{
@@ -193,7 +194,7 @@ label{
 }
 
 .toggle-container{
-    background-image: url(colegio.png);
+    background-image: url(Imagenes/colegio.png);
 }
 
 .toggle{

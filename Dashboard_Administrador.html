@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,19 @@
     <!-- Estilo para el contenido de la pagina -->
     <style>
         /* Limpia el formato de la pagina y aplicamos fuente */
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
         body {
-        font-family: "Montserrat", sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(to right, #112440, #c99b9b);
+            font-family: "Montserrat", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #112440, #c99b9b);
         }
 
-        .container{
+        .container {
             display: flex;
         }
+
         nav ul {
             list-style-type: none;
             padding: 0;
@@ -76,47 +78,50 @@
             height: 100vh;
             transition: width 0.3s ease;
         }
+
         .sidebar:hover {
             width: 300px;
         }
 
-header {
-    justify-content: center;
-    display: flex;
-    background-color: #333;
-    color: white;
-    padding:0 50px;
-}
+        header {
+            justify-content: center;
+            display: flex;
+            background-color: #333;
+            color: white;
+            padding: 10px 50px;
+        }
 
-h1{
-    padding-right: 80px;
-    display: flex;
+        h1 {
+            padding-right: 80px;
+            display: flex;
             justify-content: center;
             align-items: center;
         }
 
-.navbar{
-    display: flex;
-    justify-content: right;
-    align-items: center;
-}
+        .navbar {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+        }
 
 
-.navbar nav ul li {
-    display: inline;
-}
+        .navbar nav ul li {
+            display: inline;
+        }
 
-.navbar nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px; /* Ajustar el espacio alrededor de los enlaces según sea necesario */
-}
+        .navbar nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            /* Ajustar el espacio alrededor de los enlaces según sea necesario */
+        }
 
-.navbar nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Cambiar el color de fondo al pasar el cursor */
-    border-radius: 5px; /* Añadir bordes redondeados */
-}
-
+        .navbar nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Cambiar el color de fondo al pasar el cursor */
+            border-radius: 5px;
+            /* Añadir bordes redondeados */
+        }
     </style>
 
 
@@ -127,27 +132,41 @@ h1{
             border-collapse: collapse;
             margin-top: 20px;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
         }
+
         th {
             background-color: #f2f2f2;
         }
+
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+
         h1 {
             text-align: center;
         }
+
         form {
             margin-top: 20px;
         }
+
         label {
             font-weight: bold;
         }
-        input[type="text"], input[type="date"], input[type="number"], select {
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="file"],
+        select {
             width: 100%;
             padding: 8px;
             margin-top: 6px;
@@ -156,6 +175,7 @@ h1{
             border-radius: 4px;
             box-sizing: border-box;
         }
+
         input[type="submit"] {
             background: linear-gradient(to right, #112440, #c99b9b);
             color: white;
@@ -164,10 +184,10 @@ h1{
             border-radius: 4px;
             cursor: pointer;
         }
+
         input[type="submit"]:hover {
             background: linear-gradient(to right, #112440c7, #c99b9bb9);
         }
-
     </style>
 
 
@@ -204,131 +224,29 @@ h1{
         </div>
 
         <main>
+
+
             <section id="dashboard">
                 <h1>Gestión de Maestros</h1>
                 <h3>Registro de Profesores</h3>
-        <form id="teacherForm">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required><br>
+                <form id="teacherForm">
+                    <label for="nombre"> Primer Nombre:</label>
+                    <input type="text" id="primer_nombre" name="primer_nombre" required><br>
+                    <label for="nombre"> Segundo Nombre:</label>
+                    <input type="text" id="segundo_nombre" name="segundo_nombre" required><br>
+                    <label for="nombre"> Otros Nombres:</label>
+                    <input type="text" id="otros_nombres" name="otros_nombres"><br>
+                    <label for="apellido"> Primer Apellido:</label>
+                    <input type="text" id="primer_apellido" name="primer_apellido" required><br>
+                    <label for="apellido"> Segundo Nombre:</label>
+                    <input type="text" id="segundo_apellido" name="segundo_apellido" required><br>
+                    <label for="telefono"> Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required><br>
+                    <label for="correo"> Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" required><br>
 
-            <label for="asignatura">Asignatura</label>
-            <select name="asignatura" required>
-                <option value="matematicas">Matemáticas</option>
-                <option value="comunicacion y lenguaje">Comunicación y Lenguaje</option>
-                <option value="ingles">Inglés</option>
-                <option value="computacion">Computación</option>
-                <option value="medio natural">Medio Natural</option>
-                <option value="medio social">Medio Social</option>
-                <option value="etica">Ética</option>
-                <option value="educacion fisica">Educación Física</option>
-                <option value="artes plasticas">Artes Plásticas</option>
-              </select>
-
-            <label for="grado">Grado:</label>
-            <select id="grado" name="grado">
-                <option value="Primaria">Primaria</option>
-                <option value="Secundaria">Secundaria</option>
-                <option value="Preparatoria">Preparatoria</option>
-            </select><br>
-
-            <input type="submit" value="Agregar Profesor">
-        </form>
-        <hr>
-        <h2>Lista de Profesores</h2>
-        <table id="teacherTable">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Asignatura</th>
-                    <th>Grado</th>
-                </tr>
-            </thead>
-            <tbody id="teacherList">
-                <!-- Aquí se agregará dinámicamente la lista de profesores -->
-            </tbody>
-        </table>
-            </section>
-
-            <section id="users">
-                <h1>Gestión de Estudiantes</h1>
-                <!-- Formulario para agregar/editar usuarios aquí -->
-                <!-- Lista de usuarios registrados aquí -->
-                <h3>Registro de Estudiantes</h3>
-
-                <form id="studentForm">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required><br>
-
-                    <label for="grado">Grado:</label>
-                    <select id="grado" name="grado">
-                        <option value="Primaria">Primaria</option>
-                        <option value="Secundaria">Secundaria</option>
-                        <option value="Preparatoria">Preparatoria</option>
-                    </select><br>
-
-                    <input type="submit" value="Agregar Estudiante">
-                </form>
-
-                <hr>
-
-                <!-- Lista de estudiantes registrados -->
-                <h2>Lista de Estudiantes</h2>
-                <table id="studentTable">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Grado</th>
-                        </tr>
-                    </thead>
-                    <tbody id="studentList">
-                        <!-- Aquí se agregará dinámicamente la lista de estudiantes -->
-                    </tbody>
-                </table>
-
-                <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const form = document.getElementById('studentForm');
-                        const tableBody = document.getElementById('studentList');
-
-                        form.addEventListener('submit', function(event) {
-                            event.preventDefault();
-
-                            const nombre = document.getElementById('nombre').value;
-                            const grado = document.getElementById('grado').value;
-
-                            // Crear una nueva fila en la tabla con los datos del estudiante
-                            const newRow = document.createElement('tr');
-                            newRow.innerHTML = `
-                                <td>${nombre}</td>
-                                <td>${grado}</td>
-                            `;
-                            tableBody.appendChild(newRow);
-
-                            // Limpiar el formulario después de agregar el estudiante
-                            form.reset();
-                        });
-                    });
-                </script>
-
-            </section>
-
-            <section id="courses">
-                <h2>Gestión de Cursos</h2>
-                <!-- Formulario para agregar/editar cursos aquí -->
-                <div >
-                    <!-- Lista de maestros aquí -->
-                    <div style="margin-right: 20px; flex: 1; min-width: 200px;">
-                      <label for="maestros">Maestros</label><br>
-                      <select name="maestros" required style="width: 100%; text-align: center;">
-                        <option value="jose luis fernandez debian">José Luis Fernandez Debian</option>
-                        <option value="juan mario gonzales veliz">Juan Mario Gonzales Veliz</option>
-                        <option value="david turing tesla">David Turing Tesla</option>
-                      </select>
-                    </div>
-                    <!-- Lista de cursos aquí -->
-                    <div style="margin-right: 20px; flex: 1; min-width: 200px;">
-                      <label for="cursos">Cursos</label><br>
-                      <select name="cursos" size="6" multiple style="width: 100%; text-align: left;">
+                    <label for="asignatura">Asignatura</label>
+                    <select name="asignatura" required>
                         <option value="matematicas">Matemáticas</option>
                         <option value="comunicacion y lenguaje">Comunicación y Lenguaje</option>
                         <option value="ingles">Inglés</option>
@@ -338,14 +256,176 @@ h1{
                         <option value="etica">Ética</option>
                         <option value="educacion fisica">Educación Física</option>
                         <option value="artes plasticas">Artes Plásticas</option>
-                      </select>
+                    </select>
+
+                    <label for="grado">Grado:</label>
+                    <select id="grado" name="grado">
+                        <option value="Primaria">Primaria</option>
+                        <option value="Secundaria">Secundaria</option>
+                        <option value="Preparatoria">Preparatoria</option>
+                    </select><br>
+
+                    <input type="submit" value="Agregar Profesor">
+                    <input type="submit" value="Editar Profesor">
+                    <input type="submit" value="Eliminar Profesor">
+                </form>
+                <hr>
+                <h2>Lista de Profesores</h2>
+                <table id="teacherTable">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Asignatura</th>
+                            <th>Grado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="teacherList">
+                        <!-- Aquí se agregará dinámicamente la lista de profesores -->
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="users">
+                            <h1>Gestión de Estudiantes</h1>
+                            <!-- Formulario para agregar/editar usuarios aquí -->
+                            <!-- Lista de usuarios registrados aquí -->
+                            <h3>Registro de Estudiantes</h3>
+                            <form id="studentForm">
+                                <label for="primer_nombre">Primer Nombre:</label>
+                                <input type="text" id="primer_nombre" name="primer_nombre" required><br>
+                                <label for="segundo_nombre">Segundo Nombre:</label>
+                                <input type="text" id="segundo_nombre" name="segundo_nombre" required><br>
+                                <label for="primer_apellido">Primer Apellido:</label>
+                                <input type="text" id="primer_apellido" name="primer_apellido" required><br>
+                                <label for="segundo_apellido">Segundo Apellido:</label>
+                                <input type="text" id="segundo_apellido" name="segundo_apellido" required><br>
+                                <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br>
+                                <label for="direccion">Dirección:</label>
+                                <input type="text" id="direccion" name="direccion" required><br>
+                                <label for="telefono">Teléfono:</label>
+                                <input type="tel" id="telefono" name="telefono" required><br>
+                                <label for="correo">Correo electrónico:</label>
+                                <input type="email" id="correo" name="correo" required><br>
+                                <label for="cui">CUI:</label>
+                                <input type="text" id="cui" name="cui" required><br>
+                                <label for="foto">Foto:</label>
+                                <input type="file" id="foto" name="foto" >
+            
+            
+                                <label for="grado">Grado:</label>
+                                <select id="grado" name="grado">
+                                    <option value="Primaria">Primaria</option>
+                                    <option value="Secundaria">Secundaria</option>
+                                    <option value="Preparatoria">Preparatoria</option>
+                                </select><br>
+            
+                                <input type="submit" value="Agregar Estudiante">
+                                <input type="submit" value="Editar Estudiante">
+                                <input type="submit" value="Eliminar Estudiante">
+                            </form>
+            
+                            <hr>
+                            <!-- Lista de estudiantes registrados -->
+                            <h2>Lista de Estudiantes</h2>
+                            <table id="studentTable">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Grado</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="studentList">
+                                    <!-- Aquí se agregará dinámicamente la lista de estudiantes -->
+                                </tbody>
+                            </table>
+            
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const form = document.getElementById('studentForm');
+                                    const tableBody = document.getElementById('studentList');
+                            
+                                    form.addEventListener('submit', function(event) {
+                                        event.preventDefault();
+            
+                                        const primer_nombre = document.getElementById('primer_nombre').value;
+                                        //const segundo_nombre = document.getElementById('segundo_nombre').value;
+                                        //const otros_nombres = document.getElementById('otros_nombres').value;
+                                        const primer_apellido = document.getElementById('primer_apellido').value;
+                                        const segundo_apellido = document.getElementById('segundo_apellido').value;
+                                        //const fecha_nacimiento = document.getElementById('fecha_nacimineto').value;
+                                        //const direccion = document.getElementById('direccion').value;
+                                        //const telefono = document.getElementById('telefono').value;
+                                        //const correo = document.getElementById('correo').value;
+                                        //const cui = document.getElementById('cui').value;
+                                        //const foto = document.getElementById('foto').value;
+                                        const grado = document.getElementById('grado').value;
+            
+                                        const datosAlumno = {
+                                            'primer_nombre' : primer_nombre,
+                                            'segundo_nombre' : segundo_nombre,
+                                            'otros_nombres' : otros_nombres,
+                                            'primer_apellido' : primer_apellido,
+                                            'segundo_apellido' : segundo_apellido,
+                                            'fecha_nacimiento' : fecha_nacimiento,
+                                            'direccion' : direccion,
+                                            'telefono' : telefono,
+                                            'correo' : correo,
+                                            'cui' : cui,
+                                            'foto' : foto,
+                                            'grado' : grado
+                                        }
+            
+                                        // Crear una nueva fila en la tabla con los datos del estudiante
+                                        const newRow = document.createElement('tr');
+                                        newRow.innerHTML = `
+                                            <tr>
+                                            <td>${primer_nombre} ${primer_apellido}</td>
+                                            <td>${grado}</td>
+                                        `;
+                                        tableBody.appendChild(newRow);
+                            
+                                        // Limpiar el formulario después de agregar el estudiante
+                                        form.reset();
+                                    });
+                                });
+                            </script>  
+                        </section>
+
+            <section id="courses">
+                <h2>Gestión de Cursos</h2>
+                <!-- Formulario para agregar/editar cursos aquí -->
+                <div>
+                    <!-- Lista de maestros aquí -->
+                    <div style="margin-right: 20px; flex: 1; min-width: 200px;">
+                        <label for="maestros">Maestros</label><br>
+                        <select name="maestros" required style="width: 100%; text-align: center;">
+                            <option value="jose luis fernandez debian">José Luis Fernandez Debian</option>
+                            <option value="juan mario gonzales veliz">Juan Mario Gonzales Veliz</option>
+                            <option value="david turing tesla">David Turing Tesla</option>
+                        </select>
+                    </div>
+                    <!-- Lista de cursos aquí -->
+                    <div style="margin-right: 20px; flex: 1; min-width: 200px;">
+                        <label for="cursos">Cursos</label><br>
+                        <select name="cursos" size="6" multiple style="width: 100%; text-align: left;">
+                            <option value="matematicas">Matemáticas</option>
+                            <option value="comunicacion y lenguaje">Comunicación y Lenguaje</option>
+                            <option value="ingles">Inglés</option>
+                            <option value="computacion">Computación</option>
+                            <option value="medio natural">Medio Natural</option>
+                            <option value="medio social">Medio Social</option>
+                            <option value="etica">Ética</option>
+                            <option value="educacion fisica">Educación Física</option>
+                            <option value="artes plasticas">Artes Plásticas</option>
+                        </select>
                     </div>
                     <div style="flex: 1; min-width: 200px;">
-                      <form>
-                        <input type="submit" value="Asignar Curso">
-                      </form>
+                        <form>
+                            <input type="submit" value="Asignar Curso">
+                        </form>
                     </div>
-                  </div>
+                </div>
             </section>
 
             <section id="ratings">
@@ -355,38 +435,40 @@ h1{
                 <div style="display: flex; flex-wrap: wrap;">
                     <!-- Lista de maestros aquí -->
                     <div style="margin-right: 20px; flex: 1; min-width: 200px;">
-                      <select name="maestros" required style="width: 100%; text-align: center;">
-                        <option value="matematicas">Matemáticas</option>
-                        <option value="comunicacion y lenguaje">Comunicación y Lenguaje</option>
-                        <option value="ingles">Inglés</option>
-                        <option value="computacion">Computación</option>
-                        <option value="medio natural">Medio Natural</option>
-                        <option value="medio social">Medio Social</option>
-                        <option value="etica">Ética</option>
-                        <option value="educacion fisica">Educación Física</option>
-                        <option value="artes plasticas">Artes Plásticas</option>
-                      </select>
+                        <select name="maestros" required style="width: 100%; text-align: center;">
+                            <option value="matematicas">Matemáticas</option>
+                            <option value="comunicacion y lenguaje">Comunicación y Lenguaje</option>
+                            <option value="ingles">Inglés</option>
+                            <option value="computacion">Computación</option>
+                            <option value="medio natural">Medio Natural</option>
+                            <option value="medio social">Medio Social</option>
+                            <option value="etica">Ética</option>
+                            <option value="educacion fisica">Educación Física</option>
+                            <option value="artes plasticas">Artes Plásticas</option>
+                        </select>
                     </div>
 
-                        <!-- Lista de maestros aquí -->
+                    <!-- Lista de maestros aquí -->
                     <div style="margin-right: 20px; flex: 1; min-width: 200px;">
-                      <select name="maestros" required style="width: 100%; text-align: center;">
-                        <option value="Primaria">Primaria</option>
-                        <option value="Secundaria">Secundaria</option>
-                        <option value="Preparatoria">Preparatoria</option>
-                      </select>
+                        <select name="maestros" required style="width: 100%; text-align: center;">
+                            <option value="Primaria">Primaria</option>
+                            <option value="Secundaria">Secundaria</option>
+                            <option value="Preparatoria">Preparatoria</option>
+                        </select>
                     </div>
                 </div>
+
+
                 <div class="tabla">
                     <table id="tablaNotas" style="width: 100%; text-align: center;">
                         <thead>
-                        <!-- Aquí se generarán las columnas de calificaciones -->
-                        <tr>
-                            <th>Alumno</th>
-                            <th>Nota Final</th> 
-                            <th>Resultado</th>
-                            <th>Año</th>
-                        </tr>
+                            <!-- Aquí se generarán las columnas de calificaciones -->
+                            <tr>
+                                <th>Alumno</th>
+                                <th>Nota Final</th>
+                                <th>Resultado</th>
+                                <th>Año</th>
+                            </tr>
                         </thead>
                         <tbody>
                         </tbody>
@@ -418,7 +500,7 @@ h1{
                     <label for="mes_pago">Mes de Pago:</label>
                     <!-- <input type="text" id="mes_pago" name="mes_pago" required><br><br> -->
                     <select id="mes_pago" name="mes_pago" required>
-                        <option value >Seleccione un mes de pago</option>
+                        <option value>Seleccione un mes de pago</option>
                         <option value="Enero">Enero</option>
                         <option value="Febrero">Febrero</option>
                         <option value="Marzo">Marzo</option>
@@ -471,72 +553,8 @@ h1{
         <p>&copy; 2024 Sistema de Gestión Escolar. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-        //Mostrar sections al presionar opciones del sidebar
-        document.addEventListener('DOMContentLoaded', function() {
-            const sidebarItems = document.querySelectorAll('.sidebar nav ul li a');
-
-            sidebarItems.forEach(function(item) {
-                item.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
-
-                    if (targetSection) {
-                        const sections = document.querySelectorAll('section');
-                        sections.forEach(function(section) {
-                            section.style.display = 'none';
-                        });
-                        targetSection.style.display = 'block';
-                    }
-                });
-            });
-
-
-
-            /**
-             * body de tabla tableReports
-             **/
-            const people = [
-                {
-                    "id": 123456,
-                    "name": "Pedro Esteban Agusto Galindo",
-                    "grado": "6to primaria",
-                    "estado": true
-                },
-                {
-                    "id": 7890,
-                    "name": "Ana María del Rosario",
-                    "grado": "3ro básico",
-                    "estado": false
-                },
-                {
-                    "id": 9876226,
-                    "name": "Agustiniano raro del parque",
-                    "grado": "1ero primaria",
-                    "estado": true
-                }
-            ];
-
-
-            /**
-             * Segmento de código que genera el body de la tabla de Informes y análisis
-             */
-            const tableReportsBody = document.querySelector("#tableReportsBody");
-            let body = "";
-            for(let person of people){
-                body += `
-                    <tr>
-                        <td>${person.id}</td>
-                        <td>${person.name}</td>
-                        <td>${person.grado}</td>
-                        <td>${(person.estado ? "Solvente" : "Insolvente")}</td>
-                    </tr>
-                `;
-            }
-            tableReportsBody.innerHTML = body;
-        });
-    </script>
-    <script src="script-recursos.js"></script>
+    <script src="/src/js/administrador_script.js"></script>
+    <script src="src/js/script_control_notas.js"></script>
 </body>
+
 </html>

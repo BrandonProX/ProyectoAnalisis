@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incia sesion</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="Logo_colegiojireh.png">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="icon" href="src/css/Imagenes/Logo_colegiojireh.png">
 </head>
 <body>
     <!-- Contenido del inicio de sesión -->
@@ -62,6 +62,12 @@
                         <option value="Docente">Docente</option>
                         <option value="Administrador">Administrador</option>
                         <option value="Estudiante">Estudiante</option>
+                    </select>
+
+                    <select name="grado" id="grado" required>
+                        <option value="">---selecciona el grado del estudiante---</option>
+                        <option value="primaria">Primaria</option>
+                        <option value="basicos">Basicos</option>
                     </select>
 
                     <label for="email" name="email" id="email" >Ingresa tu email</label>
@@ -126,7 +132,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="script.js"></script>
-    <script src="login.js"></script>
+    <script src="src/js/login.js"></script>
 </body>
 </html>
