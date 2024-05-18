@@ -58,12 +58,17 @@
                     </label>
 
                     <select name="tipocuenta" id="tipocuenta" required>
-                        <option value="">---selecciona el tipo de cuenta--z-</option>
+                        <option value="">---selecciona el tipo de cuenta---</option>
                         <option value="Docente">Docente</option>
                         <option value="Administrador">Administrador</option>
                         <option value="Estudiante">Estudiante</option>
                     </select>
 
+
+                    <label for="tipocuenta" id="tipocuenta">
+                        Selecciona el tipo de cuenta que deseas crear
+                    </label>
+                    
                     <select name="grado" id="grado" required>
                         <option value="">---selecciona el grado del estudiante---</option>
                         <option value="primaria">Primaria</option>
@@ -73,18 +78,18 @@
                     <label for="email" name="email" id="email" >Ingresa tu email</label>
                     <input type="email" name="email" id="email" required>
 
-                    <fieldset class="password">
-                        <label for="clave1">Ingresa tu contraseña</label>
+                    <label for="password">Ingresa tu contraseña</label>
+                    <div style="display: flex; width: 100%;">
                         <input type="password" id="clave1" class="clave1" placeholder="********" required>
                         <button type="button" class="btnPassword" onclick="mostrarContrasena('clave1')">Mostrar</button>
-                    </fieldset>
-                
-                    <fieldset class="password">
-                        <label for="clave2">Confirma tu contraseña</label>
+                    </div>
+
+                    <label for="password">confirma tu contraseña</label>
+                    <div style="display: flex; width: 100%;">
                         <input type="password" id="clave2" class="clave2" placeholder="********" required>
                         <button type="button" class="btnPassword" onclick="mostrarContrasena('clave2')">Mostrar</button>
-                    </fieldset>
-                </fieldset>
+                    </div>
+
                 <button class="hidden" value="REGISTRAR" onclick="comprobarClave()">REGISTRAR</button>
             </form>
         </div>

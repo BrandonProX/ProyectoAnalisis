@@ -114,7 +114,7 @@ h1{
     color: #fff;
 }
 
-.container input{
+.container input, select{
     background-color: #fff;
     border:none;
     margin: 8px 0;
