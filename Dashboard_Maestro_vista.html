@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,6 +38,10 @@
         </div>
 
         <main>
+<<<<<<< HEAD
+=======
+
+>>>>>>> be2a6cbfed5f6530cc9da1d8feecdb29b3b01f95
             <section id="anuncios">
                 <h2>Foro de Discusión</h2>
                 <div id="threads">
@@ -48,6 +53,7 @@
                     <textarea id="threadContent" placeholder="Contenido del Hilo" required></textarea>
                     <input type="file" id="fileInput" accept=".txt,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.zip">
                     <button type="submit">Publicar</button>
+                    <input type="submit" id="btnAnuncio">
                 </form>
             </section>
 
@@ -65,12 +71,20 @@
                         <option value="computacion">Ingles</option>
                         <option value="computacion">Ed fisica</option>
                       </select>
+                        <select name="maestros" required style="width: 100%; text-align: center;">
+                            <option value="">--Selecciona un curso--</option>
+                            <option value="matematicas">Matemáticas</option>
+                            <option value="computacion">Computacion</option>
+                        </select>
                     </div>
                 </div>
                 <div class="tabla">
                     <table id="tablaNotas" style="width: 100%; text-align: center;">
                         <thead>
                         <tr></tr>
+                            <!-- Aquí se generarán las columnas de calificaciones -->
+                            <tr>
+                            </tr>
                         </thead>
                         <tbody></tbody>
                     </table>
@@ -82,6 +96,17 @@
                 <p>Listado estudiantes - Asistencia</p>
                 <input type="date" id="">
                 <table>
+                <p>
+                    Listado estudiantes - Asistencia
+                </p>
+                <!-- Generación de informes y análisis aquí -->
+                <!-- Solvencia de estudiantes -->
+                <label for="dynamicComboBox">Choose an option:</label>
+                <select id="dynamicComboBox">
+                    <option value="">Buscando clases...</option>
+                </select>
+                <input type="date" id="fecha" name="fecha">
+                <table id="">
                     <thead>
                         <tr>
                             <th> Id_alumno </th>
@@ -101,10 +126,46 @@
     </footer>
 
     <script>
+        //Mostrar sections al presionar opciones del sidebar
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebarItems = document.querySelectorAll('.sidebar nav ul li a');
+
+            sidebarItems.forEach(function (item) {
+                item.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        const sections = document.querySelectorAll('section');
+                        sections.forEach(function (section) {
+                            section.style.display = 'none';
+                        });
+                        targetSection.style.display = 'block';
+                    }
+                });
+            });
+
+
+
+            /**
+             * body de tabla tableReports
+             **/
+
+        });
     </script>
 
+
+    <script src="src/js/asistencia_script.js"></script>
     <script src="src/js/maestro-script.js"></script>
     <script src="src/js/administrador_script.js"></script>
     <script src="src/js/script_control_notas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- mandar datos a la bdd unu-->
+    <script src="src/js/maestro-api.js"></script>
+    
+
 </body>
+</html>
+
 </html>

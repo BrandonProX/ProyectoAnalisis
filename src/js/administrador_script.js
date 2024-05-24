@@ -1,22 +1,22 @@
 //Mostrar sections al presionar opciones del sidebar
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const sidebarItems = document.querySelectorAll('.sidebar nav ul li a');
 
-    sidebarItems.forEach(function(item) {
-        item.addEventListener('click', function(event) {
+    sidebarItems.forEach(function (item) {
+        item.addEventListener('click', function (event) {
             event.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
 
             if (targetSection) {
                 const sections = document.querySelectorAll('section');
-                sections.forEach(function(section) {
+                sections.forEach(function (section) {
                     section.style.display = 'none';
                 });
                 targetSection.style.display = 'block';
             }
         });
-});
+    });
 
 
     /**
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
      */
     const tableReportsBody = document.querySelector("#tableReportsBody");
     let body = "";
-    for(let person of people){
+    for (let person of people) {
         body += `
             <tr>
                 <td>${person.id}</td>
@@ -62,56 +62,44 @@ document.addEventListener('DOMContentLoaded', function() {
     tableReportsBody.innerHTML = body;
 });
 
-const listaalumnos = [
-    {
-        "id_alumno": 1,
-        "primer_nombre": "juan",
-        "primer_apellido": "perez",
-        "id_clase": 1
-    },
-    {
-        "id_alumno": 2,
-        "primer_nombre": "juan",
-        "primer_apellido": "perez",
-        "id_clase": 1
-    },
-    {
-        "id_alumno": 3,
-        "primer_nombre": "juan",
-        "primer_apellido": "perez",
-        "id_clase": 1
-    },
-    {
-        "id_alumno": 4,
-        "primer_nombre": "juan",
-        "primer_apellido": "perez",
-        "id_clase": 1
-    },
-    {
-        "id_alumno": 5,
-        "primer_nombre": "gustavo",
-        "primer_apellido": "perez",
-        "id_clase": 1
-    }
-];
+// const listaalumnos = [
+//     // {
+//     //     "id_alumno": 1,
+//     //     "primer_nombre": "juan",
+//     //     "primer_apellido": "perez",
+//     //     "id_clase": 1
+//     // },
+//     // {
+//     //     "id_alumno": 2,
+//     //     "primer_nombre": "juan",
+//     //     "primer_apellido": "perez",
+//     //     "id_clase": 1
+//     // },
+//     // {
+//     //     "id_alumno": 3,
+//     //     "primer_nombre": "juan",
+//     //     "primer_apellido": "perez",
+//     //     "id_clase": 1
+//     // },
+//     // {
+//     //     "id_alumno": 4,
+//     //     "primer_nombre": "juan",
+//     //     "primer_apellido": "perez",
+//     //     "id_clase": 1
+//     // },
+//     // {
+//     //     "id_alumno": 5,
+//     //     "primer_nombre": "gustavo",
+//     //     "primer_apellido": "perez",
+//     //     "id_clase": 1
+//     // }
+// ];
 
-const tablaAlumnos = document.querySelector("#tablaAlumnos");
-let body = "";
-for(let person of listaalumnos){
-    body += `
-        <tr>
-            <td>${person.id_alumno}</td>
-            <td>${person.primer_nombre+" "+person.primer_apellido}</td>
-            <td><input type="checkbox" class="asistencia-checkbox"></td>
-        </tr>
-    `;
-}
-tablaAlumnos.innerHTML = body;
 
 
 
 // Configurar la URL de la API
-const apiUrl = 'http://127.0.0.1:3000/login';
+const apiUrl = 'http://127.0.0.1:3000/anadirAsistencia';
 const alumnosPeticion = [];
 const btnAsistencia = document.getElementById('btnAsistencia');
 
@@ -119,28 +107,42 @@ const btnAsistencia = document.getElementById('btnAsistencia');
 btnAsistencia.addEventListener('click', async (event) => {
     event.preventDefault();
     // Envia al api los datos para actualizar BD
-    const jsonAlumnos = JSON.stringify(alumnosPeticion);
-    console.log(jsonAlumnos);
-    await registrarAsistencia(jsonAlumnos);
+    await registrarAsistencia();
 });
 
-async function registrarAsistencia(userData) {
-    try {
-        // Realizar la solicitud POST usando Axios
-        const response = await axios.post(apiUrl, userData);
-        // Mostrar la respuesta en la página
-        if (response.status === 200 || response.data.message == 'Registro exitoso') {
-            alert("Asistencia registrada")
-        } else {
-            // Mostrar mensaje de error si el inicio de sesión falla
-            alert('Error al registrar asistencia');
-        }
-    } catch (error) {
-        // Mostrar errores en caso de fallo
-        console.error('Error al realizar la solicitud:', error);
-        alert('Error al guardar asistencia'); // Inform the user of a failed login
-    }
+
+async function registrarAsistencia() {
+    // Llamada a la API del backend utilizando Axios
+    axios.post(apiUrl, { registrosAsistencia: datosAsistencia })
+        .then(response => {
+            alert('Asistencia registrada exitosamente:', response.data);
+            // Aquí puedes manejar la respuesta del servidor, por ejemplo, mostrar un mensaje de éxito al usuario
+        })
+        .catch(error => {
+            alert('Error al enviar datos al servidor:', error);
+            console.error('Error sending request:', error);
+            console.error('Error details:', error.response); // Log detailed error information
+            // Aquí puedes manejar el error, por ejemplo, mostrar un mensaje de error al usuario
+        });
 }
+
+// async function registrarAsistencia(userData) {
+//     try {
+//         // Realizar la solicitud POST usando Axios
+//         const response = await axios.post(apiUrl, userData);
+//         // Mostrar la respuesta en la página
+//         if (response.status === 200 || response.data.message == 'Registro exitoso') {
+//             alert("Asistencia registrada")
+//         } else {
+//             // Mostrar mensaje de error si el inicio de sesión falla
+//             alert('Error al registrar asistencia');
+//         }
+//     } catch (error) {
+//         // Mostrar errores en caso de fallo
+//         console.error('Error al realizar la solicitud:', error);
+//         alert('Error al guardar asistencia'); // Inform the user of a failed login
+//     }
+// }
 
 
 
@@ -171,5 +173,5 @@ function generarJSON() {
         alumnosPeticion.push(alumno);
     }
 
-    
+
 }
