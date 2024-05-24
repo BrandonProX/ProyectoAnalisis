@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,8 +36,8 @@
         </div>
 
         <main>
-           
-            <section id="anuncios">                
+
+            <section id="anuncios">
                 <h2>Foro de Discusión</h2>
                 <div id="threads">
                     <!-- Los hilos se cargarán aquí mediante JavaScript -->
@@ -45,7 +46,7 @@
                     <h3>Nuevo Hilo</h3>
                     <input type="text" id="threadTitle" placeholder="Título del Hilo" required>
                     <textarea id="threadContent" placeholder="Contenido del Hilo" required></textarea>
-                    <input type="submit">
+                    <input type="submit" id="btnAnuncio">
                 </form>
 
             </section>
@@ -57,19 +58,19 @@
                 <div style="display: flex; flex-wrap: wrap;">
                     <!-- Lista de maestros aquí -->
                     <div style="margin-right: 20px; flex: 1; min-width: 200px;">
-                      <select name="maestros" required style="width: 100%; text-align: center;">
-                        <option value="">--Selecciona un curso--</option>
-                        <option value="matematicas">Matemáticas</option>
-                        <option value="computacion">Computacion</option>
-                      </select>
+                        <select name="maestros" required style="width: 100%; text-align: center;">
+                            <option value="">--Selecciona un curso--</option>
+                            <option value="matematicas">Matemáticas</option>
+                            <option value="computacion">Computacion</option>
+                        </select>
                     </div>
                 </div>
                 <div class="tabla">
                     <table id="tablaNotas" style="width: 100%; text-align: center;">
                         <thead>
-                        <!-- Aquí se generarán las columnas de calificaciones -->
-                        <tr>
-                        </tr>
+                            <!-- Aquí se generarán las columnas de calificaciones -->
+                            <tr>
+                            </tr>
                         </thead>
                         <tbody>
                         </tbody>
@@ -84,7 +85,11 @@
                 </p>
                 <!-- Generación de informes y análisis aquí -->
                 <!-- Solvencia de estudiantes -->
-                <input type="date" name="" id="">
+                <label for="dynamicComboBox">Choose an option:</label>
+                <select id="dynamicComboBox">
+                    <option value="">Buscando clases...</option>
+                </select>
+                <input type="date" id="fecha" name="fecha">
                 <table id="">
                     <thead>
                         <tr>
@@ -109,24 +114,24 @@
 
     <script>
         //Mostrar sections al presionar opciones del sidebar
-        document.addEventListener('DOMContentLoaded', function() {
-    const sidebarItems = document.querySelectorAll('.sidebar nav ul li a');
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebarItems = document.querySelectorAll('.sidebar nav ul li a');
 
-    sidebarItems.forEach(function(item) {
-        item.addEventListener('click', function(event) {
-            event.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
+            sidebarItems.forEach(function (item) {
+                item.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
 
-            if (targetSection) {
-                const sections = document.querySelectorAll('section');
-                sections.forEach(function(section) {
-                    section.style.display = 'none';
+                    if (targetSection) {
+                        const sections = document.querySelectorAll('section');
+                        sections.forEach(function (section) {
+                            section.style.display = 'none';
+                        });
+                        targetSection.style.display = 'block';
+                    }
                 });
-                targetSection.style.display = 'block';
-            }
-        });
-});
+            });
 
 
 
@@ -137,11 +142,19 @@
         });
     </script>
 
+
+    <script src="src/js/asistencia_script.js"></script>
     <script src="src/js/maestro-script.js"></script>
 
     <script src="src/js/administrador_script.js"></script>
 
     <!-- Script que permite actualizar el listado de asistencia :D -->
     <script src="src/js/script_control_notas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- mandar datos a la bdd unu-->
+    <script src="src/js/maestro-api.js"></script>
+    
+
 </body>
+
 </html>
