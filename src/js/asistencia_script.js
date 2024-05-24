@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
     axios.get(`http://localhost:3000/clasesProfesor/${id}`)
         .then(response => {
             comboBox.innerHTML = ''; // Clear existing options
-            listaalumnos = [];
             response.data.forEach(item => {
                 const option = document.createElement('option');
                 option.value = item.id_clase;
@@ -20,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => {
             console.error('Error fetching data:', error);
-            comboBox.innerHTML = '<option value="">Error loading options</option>';
+            comboBox.innerHTML = '<option value="">Error al buscar clases</option>';
         });
 
     // Add event listener to the comboBox to handle class selection
