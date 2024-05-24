@@ -8,34 +8,90 @@
 </head>
 <body>
 
-    <header>
-        <div class="titleh">
-            <h1>Colegio Jireh</h1>
+<header>
+    <div class="titleh">
+        <h1>Colegio Jireh</h1>
         <h2>Maestro</h2>
-        </div>
-        <div class="navbar">
-            <nav>
-                <ul>
-                <li><a href="#dashboard">Inicio</a></li>
-                    <li><a href="#">Visítanos en Facebook</a></li>
-                    <li><a href="#">Cerrar sesión</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="containera">
-        <div class="box">
-            <div class="card">
-                <a href="Dashboard_Maestro_vista.html">
-                    <img src="src/css/Imagenes/computacion.png" alt="Imagendelcurso"></img>
-                    <div class="content">
-                        <div class="title">Computacion</div>
-                        <div class="description">Clase de computacion 6to primaria</div>
-                        <div class="horario">11:30 a 12:30</div>
-                </a>
-            </div>
-        </div>    
     </div>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="#dashboard">Inicio</a></li>
+                <li><a href="#">Visítanos en Facebook</a></li>
+                <li><a href="#">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <div class="box" id="coursesContainer"></div>
+</div>
+
+<script>
+    const courses = [
+        {
+            name: 'Computación',
+            grade: '6to Primaria',
+            description: 'Clase de computación',
+            schedule: '11:30 a 12:30',
+            link: 'computacion.html',
+            image: 'src/css/Imagenes/computacion.png'
+        },
+        {
+            name: 'Matemáticas',
+            grade: '5to Primaria',
+            description: 'Clase de matemáticas',
+            schedule: '10:00 a 11:00',
+            link: 'matematicas.html',
+            image: 'src/css/Imagenes/matematicas.png'
+        },
+        {
+            name: 'Matematica',
+            grade: '4to Primaria',
+            description: 'Clase de historia',
+            schedule: '09:00 a 10:00',
+            link: 'historia.html',
+            image: 'src/css/Imagenes/historia.png'
+        },
+        {
+            name: 'Computacion',
+            grade: '6to Primaria',
+            description: 'Clase de historia',
+            schedule: '09:00 a 10:00',
+            link: 'historia.html',
+            image: 'src/css/Imagenes/historia.png'
+        },
+        {
+            name: 'Historia',
+            grade: '5to Primaria',
+            description: 'Clase de historia',
+            schedule: '09:00 a 10:00',
+            link: 'historia.html',
+            image: 'src/css/Imagenes/historia.png'
+        }
+        
+    ];
+
+    const container = document.getElementById('coursesContainer');
+
+    courses.forEach(course => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <a href="${course.link}">
+                <img src="${course.image}" alt="${course.name}">
+                <div class="content">
+                    <div class="title">${course.name}</div>
+                    <div class="description">${course.description}</div>
+                    <div class="horario">${course.schedule}</div>
+                    <div class="grade">${course.grade}</div>
+                </div>
+            </a>
+        `;
+        container.appendChild(card);
+    });
+</script>
+
 </body>
 </html>

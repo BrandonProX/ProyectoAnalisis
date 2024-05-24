@@ -1,0 +1,175 @@
+/* Limpia el formato de la pagina y aplicamos fuente */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #112440, #c99b9b);
+}
+
+.container {
+    display: flex;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar {
+    padding: 15px;
+    border-right: 1px solid black;
+    width: 200px;
+    height: 100vh;
+    transition: width 0.3s ease;
+}
+
+.sidebar:hover {
+    width: 300px;
+}
+
+.sidebar nav ul li {
+    display: block;
+    margin-right: 20px;
+    background-color: #fff;
+    margin-top: 5px;
+    padding: 12px;
+    border: 1px solid #000;
+    border-radius: 5px;
+
+}
+
+.sidebar nav ul li a {
+    color: #000;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    width: 100%;
+}
+
+section {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+section h2 {
+    margin-top: 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+header {
+display: flex;
+justify-content: space-between;
+background-color: #333;
+color: white;
+padding: 10px 50px;
+}
+
+h1, h2 {
+margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+
+.navbar nav ul li {
+    display: inline;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    /* Ajustar el espacio alrededor de los enlaces según sea necesario */
+}
+
+.navbar nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Cambiar el color de fondo al pasar el cursor */
+    border-radius: 5px;
+    /* Añadir bordes redondeados */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="file"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background: linear-gradient(to right, #112440, #c99b9b);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(to right, #112440c7, #c99b9bb9);
+}

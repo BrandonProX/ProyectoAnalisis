@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Gestión Escolar</title>
-    <link rel="stylesheet" href="src/css/stylemaestro.css">
-    <!-- Estilo para el contenido de la pagina -->
-
+    <link rel="stylesheet" href="src/css/stylemaestroVista.css">
 </head>
 
 <body>
     <header>
-        <h1>Colegio Jireh</h1>
+        <div class="titleh">
+            <h1>Colegio Jireh</h1>
+            <h2>Maestro</h2>
+        </div>
         <div class="navbar">
             <nav>
                 <ul>
@@ -24,19 +25,19 @@
     </header>
 
     <div class="container">
+
         <div class="sidebar" id="sidebar">
             <nav>
                 <ul>
                     <li><a href="#anuncios">Anuncios</a></li>
-                    <li><a href="#ratings">Gestión de Calificaciones</a></li>
-                    <li><a href="#reports">Informes y Análisis</a></li>
+                    <li><a href="#ratings">Calificaciones</a></li>
+                    <li><a href="#reports">Reportes</a></li>
                 </ul>
             </nav>
         </div>
 
         <main>
-           
-            <section id="anuncios">                
+            <section id="anuncios">
                 <h2>Foro de Discusión</h2>
                 <div id="threads">
                     <!-- Los hilos se cargarán aquí mediante JavaScript -->
@@ -45,60 +46,52 @@
                     <h3>Nuevo Hilo</h3>
                     <input type="text" id="threadTitle" placeholder="Título del Hilo" required>
                     <textarea id="threadContent" placeholder="Contenido del Hilo" required></textarea>
-                    <input type="submit">
+                    <input type="file" id="fileInput" accept=".txt,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.zip">
+                    <button type="submit">Publicar</button>
                 </form>
-
             </section>
 
             <section id="ratings">
                 <h2>Gestión de Calificaciones</h2>
-                <!-- Formulario para agregar/editar calificaciones aquí -->
-                <!-- Lista de calificaciones aquí -->
                 <div style="display: flex; flex-wrap: wrap;">
-                    <!-- Lista de maestros aquí -->
                     <div style="margin-right: 20px; flex: 1; min-width: 200px;">
                       <select name="maestros" required style="width: 100%; text-align: center;">
                         <option value="">--Selecciona un curso--</option>
                         <option value="matematicas">Matemáticas</option>
                         <option value="computacion">Computacion</option>
+                        <option value="computacion">Sociales</option>
+                        <option value="computacion">Naturales</option>
+                        <option value="computacion">Lenguaje</option>
+                        <option value="computacion">Ingles</option>
+                        <option value="computacion">Ed fisica</option>
                       </select>
                     </div>
                 </div>
                 <div class="tabla">
                     <table id="tablaNotas" style="width: 100%; text-align: center;">
                         <thead>
-                        <!-- Aquí se generarán las columnas de calificaciones -->
-                        <tr>
-                        </tr>
+                        <tr></tr>
                         </thead>
-                        <tbody>
-                        </tbody>
+                        <tbody></tbody>
                     </table>
-                    <input type="submit">
+                </div>
             </section>
 
             <section id="reports">
                 <h2>Informes y Asistencia</h2>
-                <p>
-                    Listado estudiantes - Asistencia
-                </p>
-                <!-- Generación de informes y análisis aquí -->
-                <!-- Solvencia de estudiantes -->
-                <input type="date" name="" id="">
-                <table id="">
+                <p>Listado estudiantes - Asistencia</p>
+                <input type="date" id="">
+                <table>
                     <thead>
                         <tr>
                             <th> Id_alumno </th>
                             <th> Nombre del alumno </th>
                             <th> Asistencia </th>
                         </tr>
-
                     </thead>
-                    <tbody id="tablaAlumnos">
-
-                    </tbody>
+                    <tbody id="tablaAlumnos"></tbody>
                 </table>
-                <input type="submit" id="btnAsistencia">
+                <button id="btnAsistencia">Guardar Asistencia</button>
             </section>
         </main>
     </div>
@@ -108,40 +101,10 @@
     </footer>
 
     <script>
-        //Mostrar sections al presionar opciones del sidebar
-        document.addEventListener('DOMContentLoaded', function() {
-    const sidebarItems = document.querySelectorAll('.sidebar nav ul li a');
-
-    sidebarItems.forEach(function(item) {
-        item.addEventListener('click', function(event) {
-            event.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-
-            if (targetSection) {
-                const sections = document.querySelectorAll('section');
-                sections.forEach(function(section) {
-                    section.style.display = 'none';
-                });
-                targetSection.style.display = 'block';
-            }
-        });
-});
-
-
-
-            /**
-             * body de tabla tableReports
-             **/
-
-        });
     </script>
 
     <script src="src/js/maestro-script.js"></script>
-
     <script src="src/js/administrador_script.js"></script>
-
-    <!-- Script que permite actualizar el listado de asistencia :D -->
     <script src="src/js/script_control_notas.js"></script>
 </body>
 </html>

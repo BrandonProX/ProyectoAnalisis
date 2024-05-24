@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión Escolar</title>
+    <link rel="stylesheet" href="src/css/stylemaestroVista.css">
+</head>
+
+<body>
+    <header>
+        <div class="titleh">
+            <h1>Colegio Jireh</h1>
+            <h2>Estudiante</h2>
+        </div>
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#dashboard">Inicio</a></li>
+                    <li><a href="#">Visítanos en Facebook</a></li>
+                    <li><a href="#">Cerrar sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="sidebar" id="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#anuncios">Anuncios</a></li>
+                    <li><a href="#ratings">Calificaciones</a></li>
+                    <li><a href="#reports">Reportes</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <main>
+            <section id="anuncios">
+                <h2>Foro de Discusión</h2>
+                <div id="threads">
+                    <!-- Los hilos se cargarán aquí mediante JavaScript -->
+                </div>
+            </section>
+
+            <section id="ratings">
+                <h2>Gestión de Calificaciones</h2>
+                <div style="display: flex; flex-wrap: wrap;">
+                    <div style="margin-right: 20px; flex: 1; min-width: 200px;">
+                      <select name="estudiante" required style="width: 100%; text-align: center;">
+                        <option value="">--Selecciona un curso--</option>
+                        <option value="matematicas">Matemáticas</option>
+                        <option value="computacion">Computacion</option>
+                        <option value="computacion">Sociales</option>
+                        <option value="computacion">Naturales</option>
+                        <option value="computacion">Lenguaje</option>
+                        <option value="computacion">Ingles</option>
+                        <option value="computacion">Ed fisica</option>
+                      </select>
+                    </div>
+                </div>
+                
+                <div class="tabla">
+                    <table id="tablaNotas" style="width: 100%; text-align: center;">
+                        <thead>
+                        <tr></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="reports">
+                <h2>Informes y Asistencia</h2>
+                <p>Listado estudiantes - Asistencia</p>
+                <input type="date" id="">
+                <table>
+                    <thead>
+                        <tr>
+                            <th> Id_alumno </th>
+                            <th> Nombre del alumno </th>
+                            <th> Asistencia </th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaAlumnos"></tbody>
+                </table>
+                <button id="btnAsistencia">Guardar Asistencia</button>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sistema de Gestión Escolar. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+    </script>
+
+    <script src="src/js/maestro-script.js"></script>
+    <script src="src/js/administrador_script.js"></script>
+    <script src="src/js/script_control_notas.js"></script>
+</body>
+</html>
