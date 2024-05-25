@@ -31,7 +31,7 @@
         <div class="sidebar" id="sidebar">
             <nav>
                 <ul>
-                    <li><a href="#dashboard">Gestión de maestros</a></li>
+                    <li><a href="#dashboard" id="linkGestionMaestros">Gestión de maestros</a></li>
                     <li><a href="#users">Gestión de Alumnos</a></li>
                     <li><a href="#courses">Gestión de Cursos</a></li>
                     <li><a href="#ratings">Gestión de Calificaciones</a></li>
@@ -48,23 +48,29 @@
                 <h1>Gestión de Maestros</h1>
                 <h3>Registro de Profesores</h3>
                 <form id="teacherForm">
-                    <label for="nombre"> Primer Nombre:</label>
+                    <label for="primer_nombre">Primer Nombre:</label>
                     <input type="text" id="primer_nombre" name="primer_nombre" required><br>
-                    <label for="nombre"> Segundo Nombre:</label>
+                
+                    <label for="segundo_nombre">Segundo Nombre:</label>
                     <input type="text" id="segundo_nombre" name="segundo_nombre" required><br>
-                    <label for="nombre"> Otros Nombres:</label>
+                
+                    <label for="otros_nombres">Otros Nombres:</label>
                     <input type="text" id="otros_nombres" name="otros_nombres"><br>
-                    <label for="apellido"> Primer Apellido:</label>
+                
+                    <label for="primer_apellido">Primer Apellido:</label>
                     <input type="text" id="primer_apellido" name="primer_apellido" required><br>
-                    <label for="apellido"> Segundo Nombre:</label>
+                
+                    <label for="segundo_apellido">Segundo Apellido:</label>
                     <input type="text" id="segundo_apellido" name="segundo_apellido" required><br>
-                    <label for="telefono"> Teléfono:</label>
+                
+                    <label for="telefono">Teléfono:</label>
                     <input type="tel" id="telefono" name="telefono" required><br>
-                    <label for="correo"> Correo electrónico:</label>
+                
+                    <label for="correo">Correo electrónico:</label>
                     <input type="email" id="correo" name="correo" required><br>
-
-                    <label for="asignatura">Asignatura</label>
-                    <select name="asignatura" required>
+                
+                    <label for="asignatura">Asignatura:</label>
+                    <select name="asignatura" id="asignatura" required>
                         <option value="matematicas">Matemáticas</option>
                         <option value="comunicacion y lenguaje">Comunicación y Lenguaje</option>
                         <option value="ingles">Inglés</option>
@@ -74,27 +80,29 @@
                         <option value="etica">Ética</option>
                         <option value="educacion fisica">Educación Física</option>
                         <option value="artes plasticas">Artes Plásticas</option>
-                    </select>
-
+                    </select><br>
+                
                     <label for="grado">Grado:</label>
-                    <select id="grado" name="grado">
+                    <select id="grado" name="grado" required>
                         <option value="Primaria">Primaria</option>
                         <option value="Secundaria">Secundaria</option>
                         <option value="Preparatoria">Preparatoria</option>
                     </select><br>
-
-                    <input type="submit" value="Agregar Profesor">
-                    <input type="submit" value="Editar Profesor">
-                    <input type="submit" value="Eliminar Profesor">
+                
+                    <input type="submit" value="Agregar Profesor" id="agregarProfesor">
+                    <input type="submit" value="Editar Profesor" id="editarProfesor">
+                    <input type="submit" value="Eliminar Profesor" id="eliminarProfesor">
                 </form>
+                
                 <hr>
                 <h2>Lista de Profesores</h2>
                 <table id="teacherTable">
                     <thead>
                         <tr>
+                            <th>Id</th>
                             <th>Nombre</th>
-                            <th>Asignatura</th>
-                            <th>Grado</th>
+                            <th>Correo</th>
+                            <th>Telefono</th>
                         </tr>
                     </thead>
                     <tbody id="teacherList">
@@ -110,13 +118,13 @@
                             <h3>Registro de Estudiantes</h3>
                             <form id="studentForm">
                                 <label for="primer_nombre">Primer Nombre:</label>
-                                <input type="text" id="primer_nombre" name="primer_nombre" required><br>
+                                <input type="text" id="primer_nombre_alumno" name="primer_nombre" required><br>
                                 <label for="segundo_nombre">Segundo Nombre:</label>
-                                <input type="text" id="segundo_nombre" name="segundo_nombre" required><br>
+                                <input type="text" id="segundo_nombre_alumno" name="segundo_nombre"><br>
                                 <label for="primer_apellido">Primer Apellido:</label>
-                                <input type="text" id="primer_apellido" name="primer_apellido" required><br>
+                                <input type="text" id="primer_apellido_alumno" name="primer_apellido" required><br>
                                 <label for="segundo_apellido">Segundo Apellido:</label>
-                                <input type="text" id="segundo_apellido" name="segundo_apellido" required><br>
+                                <input type="text" id="segundo_apellido_alumno" name="segundo_apellido"><br>
                                 <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
                                 <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br>
                                 <label for="direccion">Dirección:</label>
@@ -138,9 +146,9 @@
                                     <option value="Preparatoria">Preparatoria</option>
                                 </select><br>
             
-                                <input type="submit" value="Agregar Estudiante">
-                                <input type="submit" value="Editar Estudiante">
-                                <input type="submit" value="Eliminar Estudiante">
+                                <input type="submit" value="Agregar_Estudiante">
+                                <input type="submit" value="Editar_Estudiante">
+                                <input type="submit" value="Eliminar_Estudiante">
                             </form>
             
                             <hr>
@@ -158,56 +166,6 @@
                                 </tbody>
                             </table>
             
-                            <script>
-                                document.addEventListener('DOMContentLoaded', function() {
-                                    const form = document.getElementById('studentForm');
-                                    const tableBody = document.getElementById('studentList');
-                            
-                                    form.addEventListener('submit', function(event) {
-                                        event.preventDefault();
-            
-                                        const primer_nombre = document.getElementById('primer_nombre').value;
-                                        //const segundo_nombre = document.getElementById('segundo_nombre').value;
-                                        //const otros_nombres = document.getElementById('otros_nombres').value;
-                                        const primer_apellido = document.getElementById('primer_apellido').value;
-                                        const segundo_apellido = document.getElementById('segundo_apellido').value;
-                                        //const fecha_nacimiento = document.getElementById('fecha_nacimineto').value;
-                                        //const direccion = document.getElementById('direccion').value;
-                                        //const telefono = document.getElementById('telefono').value;
-                                        //const correo = document.getElementById('correo').value;
-                                        //const cui = document.getElementById('cui').value;
-                                        //const foto = document.getElementById('foto').value;
-                                        const grado = document.getElementById('grado').value;
-            
-                                        const datosAlumno = {
-                                            'primer_nombre' : primer_nombre,
-                                            'segundo_nombre' : segundo_nombre,
-                                            'otros_nombres' : otros_nombres,
-                                            'primer_apellido' : primer_apellido,
-                                            'segundo_apellido' : segundo_apellido,
-                                            'fecha_nacimiento' : fecha_nacimiento,
-                                            'direccion' : direccion,
-                                            'telefono' : telefono,
-                                            'correo' : correo,
-                                            'cui' : cui,
-                                            'foto' : foto,
-                                            'grado' : grado
-                                        }
-            
-                                        // Crear una nueva fila en la tabla con los datos del estudiante
-                                        const newRow = document.createElement('tr');
-                                        newRow.innerHTML = `
-                                            <tr>
-                                            <td>${primer_nombre} ${primer_apellido}</td>
-                                            <td>${grado}</td>
-                                        `;
-                                        tableBody.appendChild(newRow);
-                            
-                                        // Limpiar el formulario después de agregar el estudiante
-                                        form.reset();
-                                    });
-                                });
-                            </script>  
                         </section>
 
             <section id="courses">
@@ -296,53 +254,54 @@
             <section id="resources">
                 <h1>Registro de Pagos</h1>
                 <h2>Generar pagos</h2>
-                <!-- Formulario para agregar/editar recursos aquí -->
-                <!-- Lista de recursos aquí -->
-                <!-- Generar pagos -->
-                <!-- <form action="procesar_registro.php" method="POST"> -->
-                <form action="./boleta.html" method="get">
-                    <div>
-                        <label for="id_alumno">ID del Alumno:</label>
-                        <input type="text" id="id_alumno" name="id_alumno" required>
-                    </div>
-
-                    <label for="tipo_pago">Tipo de Pago:</label>
-                    <select id="tipo_pago" name="tipo_pago" required>
-                        <option value="">Seleccionar</option>
-                        <option value="Matrícula">Matrícula</option>
-                        <option value="Mensualidad">Mensualidad</option>
-                        <option value="Material">Material</option>
-                        <!-- Agrega más opciones si es necesario -->
-                    </select><br><br>
-
-                    <label for="mes_pago">Mes de Pago:</label>
-                    <!-- <input type="text" id="mes_pago" name="mes_pago" required><br><br> -->
-                    <select id="mes_pago" name="mes_pago" required>
-                        <option value>Seleccione un mes de pago</option>
-                        <option value="Enero">Enero</option>
-                        <option value="Febrero">Febrero</option>
-                        <option value="Marzo">Marzo</option>
-                        <option value="Abril">Abril</option>
-                        <option value="Mayo">Mayo</option>
-                        <option value="Junio">Junio</option>
-                        <option value="Julio">Junio</option>
-                        <option value="Agosto">Agosto</option>
-                        <option value="Septiembre">Septiembre</option>
-                        <option value="Octubre">Octubre</option>
-                        <option value="Noviembre">Noviembre</option>
-                        <option value="Diciembre">Diciembre</option>
-                    </select>
-
-                    <label for="anio_pago">Año de Pago:</label>
-                    <input type="number" id="anio_pago" name="anio_pago" required><br><br>
-
-                    <label for="monto">Monto:</label>
-                    <input type="number" id="monto" name="monto" step="0.01" required><br><br>
-
-                    <input type="submit" value="Registrar Pago">
+                <form action="./boleta.html" method="get" id="pagoForm">
+                    <fieldset>
+                        <legend>Información del Pago</legend>
+                        <div>
+                            <label for="id_alumno">ID del Alumno:</label>
+                            <input type="text" id="id_alumno" name="id_alumno" required>
+                        </div>
+                        <div>
+                            <label for="tipo_pago">Tipo de Pago:</label>
+                            <select id="tipo_pago" name="tipo_pago" required>
+                                <option value="">Seleccionar</option>
+                                <option value="colegiatura">Colegiatura</option>
+                                <option value="inscripción">Inscripción</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="mes_pago">Mes de Pago:</label>
+                            <select id="mes_pago" name="mes_pago" required>
+                                <option value="">Seleccione un mes de pago</option>
+                                <option value="Enero">Enero</option>
+                                <option value="Febrero">Febrero</option>
+                                <option value="Marzo">Marzo</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Mayo">Mayo</option>
+                                <option value="Junio">Junio</option>
+                                <option value="Julio">Julio</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Septiembre">Septiembre</option>
+                                <option value="Octubre">Octubre</option>
+                                <option value="Noviembre">Noviembre</option>
+                                <option value="Diciembre">Diciembre</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="anio_pago">Año de Pago:</label>
+                            <input type="number" id="anio_pago" name="anio_pago" required>
+                        </div>
+                        <div>
+                            <label for="monto">Monto:</label>
+                            <input type="number" id="monto" name="monto" step="0.01" required>
+                        </div>
+                        <div>
+                            <input type="submit" value="Registrar Pago" id="btnPago">
+                        </div>
+                    </fieldset>
                 </form>
             </section>
-
+            
             <section id="reports">
                 <h2>Informes y Análisis</h2>
                 <p>
@@ -371,7 +330,8 @@
         <p>&copy; 2024 Sistema de Gestión Escolar. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="/src/js/administrador_script.js"></script>
+    <script src="src/js/administrador_script.js"></script>
+    <script src="src/js/admin_crud.js"></script>
     <script src="src/js/script_control_notas.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
