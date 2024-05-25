@@ -87,7 +87,6 @@ async function login(userData) {
         const response = await axios.post(apiUrl, userData);
         // Mostrar la respuesta en la página
         console.log(response)
-        alert(response)
         if (response.status === 200 || response.data.message == 'Inicio de sesión exitoso') {
             if (response.data.user.tipo_usuario == 1){
               window.location.href = 'Dashboard_Administrador.html';
