@@ -86,8 +86,14 @@ async function login(userData) {
         // Realizar la solicitud POST usando Axios
         const response = await axios.post(apiUrl, userData);
         // Mostrar la respuesta en la página
+        console.log(response)
+        alert(response)
         if (response.status === 200 || response.data.message == 'Inicio de sesión exitoso') {
-            window.location.href = 'Dashboard_Administrador.html';
+            if (response.data.user.tipo_usuario == 1){
+              window.location.href = 'Dashboard_Administrador.html';
+            }else{
+              window.location.href = 'Dashboard_Maestro_vista.html';
+            }
         } else {
             // Mostrar mensaje de error si el inicio de sesión falla
             alert('Error al realizar login');
